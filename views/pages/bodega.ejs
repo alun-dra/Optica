@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../partials/head",{titulo: "Optica"})%>
+<body>
+    <%- include("../partials/header",{usuario: email})%>
+    
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-8 ">
+              <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                <div class="card-body p-5 text-center">
+                  <form action="/atender" >
+                      <h3 class="mb-8">Formulario de Bodeguero: </h3>
+                      
+                      <br>
+                      <div class="form-outline mb-4">
+                        <input name="id_evento" type="number"  class="form-control form-control-lg" placeholder="ID" > 
+                      </div>                   
+                      
+                      <select class="form-select" aria-label="Default select example" name="tipo">                
+                        <option value="1" selected>Orden de compra</option>
+                        <option value="2">Receta</option>
+                      </select>
+                      
+                      <input name="id" type="hidden"  class="form-control form-control-lg" placeholder="Nombre del cliente" value=<%=id%>>
+                      <input name="email" type="hidden"  class="form-control form-control-lg" placeholder="Nombre del cliente" value="<%=email%>">
+                      <input name="password" type="hidden"  class="form-control form-control-lg" placeholder="Nombre del cliente" value="<%=password%>" >
+                      <br>
+                      
+                      <button class="btn btn-primary btn-lg btn-block" type="submit">Atender </button>
+                  </form>
+                  <br>
+                  <div>
+                    <h3>Recetas y Ordenes de compra pendientes</h3>
+                    
+                    <div class="overflow-auto m-5 " style="height:350px;">
+                        <ul >
+                        <% lista.forEach(function(l){%>
+                            <li style="list-style: none;">
+                                <div class="card  m-2 shadow-2-strong" style="border-radius: 1rem;">
+                                <div class="card-body p-2 text-center">
+                                <h3><%=l.tabla%> N° <%=l.rowid%></h3>
+                                <%if(l.tabla=="Ventas"){%>
+                                    <% l.lista.forEach(function(ll){%>
+                                        <p><%=ll.cantidad%> unidades de <%= ll.producto%></p>
+                                        
+                                    <% }); %>
+                                <%}else{%>
+                                    <p><%=l.cantidad%> unidades de <%= l.nombre%></p>                                    
+                                <%}%>
+                                </div>
+                                </div>
+                            </li>
+                        <% }); %>
+                        </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div> 
+      <%- include("../partials/footer")%>
+</body>
+<%- include("../partials/closeHead")%>
+</html>

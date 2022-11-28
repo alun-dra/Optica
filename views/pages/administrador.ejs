@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../partials/head",{titulo: "Optica"})%>
+<body>
+    <%- include("../partials/header",{usuario: email})%>
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-8 ">
+            <div class="card shadow-2-strong" style="border-radius: 1rem;">
+              <div class="card-body p-5 text-center">
+                <form action="/ingresarOrdenDeCompra" >
+                    <h3 class="mb-8">Formulario de Orden de Compra: </h3>
+                    
+                    <br>
+                    <div class="form-outline mb-4">
+                      <input name="id_producto" type="text"  class="form-control form-control-lg" placeholder="ID producto" > 
+                    </div>                   
+                    <div class="form-outline mb-4">
+                      <input name="cantidad_producto" type="number"  class="form-control form-control-lg" placeholder="Cantidad producto" > 
+                    </div>  
+                    <input name="id" type="hidden"  class="form-control form-control-lg" placeholder="Nombre del cliente" value=<%=id%>>
+                    <input name="email" type="hidden"  class="form-control form-control-lg" placeholder="Nombre del cliente" value="<%=email%>">
+                    <input name="password" type="hidden"  class="form-control form-control-lg" placeholder="Nombre del cliente" value="<%=password%>" >
+                    <br>
+                    
+                    <button class="btn btn-primary btn-lg btn-block" type="submit">Ingresar orden de compra </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-8 ">
+              <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                <div class="card-body p-5 text-center">
+                  <form action="/ingresarOrdenDeCompra" >
+                      <h3 class="mb-8">Formulario de Orden de Compra: </h3>
+                      
+                      <br>
+                      <div class="form-outline mb-4">
+                        <input name="id_producto" type="text"  class="form-control form-control-lg" placeholder="ID producto" > 
+                      </div>                   
+                      <div class="form-outline mb-4">
+                        <input name="cantidad_producto" type="number"  class="form-control form-control-lg" placeholder="Cantidad producto" > 
+                      </div>  
+                      <input name="id" type="hidden"  class="form-control form-control-lg" placeholder="Nombre del cliente" value=<%=id%>>
+                      <input name="email" type="hidden"  class="form-control form-control-lg" placeholder="Nombre del cliente" value="<%=email%>">
+                      <input name="password" type="hidden"  class="form-control form-control-lg" placeholder="Nombre del cliente" value="<%=password%>" >
+                      <br>
+                      
+                      <button class="btn btn-primary btn-lg btn-block" type="submit">Ingresar orden de compra </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div> 
+      <%- include("../partials/footer")%>
+</body>
+<%- include("../partials/closeHead")%>
+</html>
