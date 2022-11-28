@@ -1,3 +1,5 @@
+// import {PORT} from './config/config.js'
+require('dotenv').config()
 const express = require('express')
 const Vendedor = require('./Modelo/DAO/Vendedor')
 const Stock = require('./Modelo/DAO/Stock')
@@ -5,7 +7,7 @@ const Bodega = require('./Modelo/DAO/Bodega')
 const Administrador = require('./Modelo/DAO/Administrador')
 const Super = require('./Modelo/DAO/Super')
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3001
 const DB = require("./Modelo/conexion");
 
 app.set('view engine','ejs')

@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "dotenv": "^16.0.3",
     "ejs": "^3.1.5",
     "express": "^4.18.2",
     "nodemailer": "^6.8.0",
@@ -9,9 +10,11 @@
   "name": "optica",
   "version": "1.0.0",
   "main": "app.js",
-  "devDependencies": {},
+  "type": "commonjs",
+  
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/app.js",
+    "start": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -23,5 +26,8 @@
     "url": "https://github.com/alun-dra/Optica/issues"
   },
   "homepage": "https://github.com/alun-dra/Optica#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
